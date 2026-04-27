@@ -1,0 +1,16 @@
+---
+name: "Docker image build"
+on:
+  push:
+    - main
+
+jobs:
+  dockerimage-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@4
+
+      - name: build
+        run: docker build -t myapplication ./my-node-app
