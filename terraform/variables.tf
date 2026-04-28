@@ -11,3 +11,14 @@ variable "container_image" {
   description = "Docker Hub image"
   default     = "subin166/myapplication:latest"
 }
+variable "domain" {
+  description = "Domain name used to look up the Route53 hosted zone."
+  type        = string
+  default = "kunchirakkattu.com"
+}
+
+variable "record" {
+  description = "Record name to be created inside the hosted zone."
+  type        = string
+  default = "app"
+}
