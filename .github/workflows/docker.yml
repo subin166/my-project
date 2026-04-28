@@ -35,6 +35,7 @@ jobs:
       - name: Redeploy ECS
         run: |
           aws ecs update-service \
-            --cluster devops-ecs-cluster \
+            --cluster ecs-node-cluster \
             --service app-service \
             --force-new-deployment
+
