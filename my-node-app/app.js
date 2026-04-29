@@ -17,3 +17,8 @@ app.listen(PORT, () => {
 app.get("/health", (req, res) => {
   res.status(200).send("OK");
 });
+app.get("/load", (req, res) => {
+  const end = Date.now() + 2000; // burn CPU ~2s
+  while (Date.now() < end) {}
+  res.send("CPU load done");
+});
